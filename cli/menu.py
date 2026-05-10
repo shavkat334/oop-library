@@ -4,7 +4,7 @@ class Menu:
         print("2. Login")
         print("0. Exit")
 
-    def print_user_menu(self):
+def print_user_menu(self):
         print("1. Search Book")
         print("2. All Books")
         print("3. Borrow Book")

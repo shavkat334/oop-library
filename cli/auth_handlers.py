@@ -1,6 +1,10 @@
 from getpass import getpass
-
-from utils.validators import validate_username, validate_password, nomalize_full_name
+from utils.validators import (
+    validate_email,
+    validate_username,
+    validate_password,
+    normalize_full_name
+)
 
 
 class AuthHandler:
@@ -9,11 +13,11 @@ class AuthHandler:
 
     def register(self):
         print("Ro'yxatdan o'tish uchun formani to'ldiring!")
-
         username = input("Username: ").strip()
         password = getpass("Password: ").strip()
         confirm = getpass("Confirm: ").strip()
-        full_name = nomalize_full_name(input("Full Name: ").strip())
+        full_name = normalize_full_name(input("Full Name: ").strip())
+        email = input("Email: ").strip()
 
         is_valid, error = validate_username(username)
         if not is_valid:
