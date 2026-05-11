@@ -30,11 +30,11 @@ def validate_password(password: str) -> tuple[bool, str]:
     return True, ""
 
 def validate_email(email: str) -> tuple[bool, str]:
-    pattern = r'^\S+@\S+\.\S+$'
+    if "@" in email and "." in email.split("@")[-1]:
+        return True, ""
+    else:
+        return False, "Email noto'g'ri formatda."
 
-    if not match(pattern, email):
-        return False, "Email manzili noto'g'ri formatda."
-    return True, ""
 
 def normalize_full_name(full_name: str) -> str:
     return full_name.title()
